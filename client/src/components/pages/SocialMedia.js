@@ -4,6 +4,14 @@ import Header from '../Header';
 import Info from '../Info';
 import Gallery from '../Gallery';
 
+const getInfo = () => {
+  fetch('/info')
+  .then(res => res.text())
+  .then(data => {
+    console.log(data)
+  })
+}
+
 const SocialMedia = () => (
   <div>
     <Header />
@@ -17,6 +25,7 @@ const SocialMedia = () => (
         them, like frisbees, by small children. You just cannot respect some one who lives like that.'
     />
     <Gallery />
+    <button onClick={getInfo}>Get some info</button>
   </div>
 )
 
