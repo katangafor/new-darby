@@ -14,17 +14,17 @@ const HomeImage = (props) => {
 
   return (
     <div className={css(styles.homeImage)}>
-    <div className={css(styles.homeImagesSpacer)}></div>
-    <h4 className={css(styles.homeImagesText1)}>I take pictures for money.</h4>
-    <h4 className={css(styles.homeImagesText2)}>More money<br/>means better pictures.</h4>
-    <h4 className={
-      css(styles.homeImagesMoneyText)} 
-      onClick={goToPricing}
-      onMouseOver={inflate}
-      onMouseOut={deflate}
-    >
-      Give me money
-    </h4>
+      <div className={css(styles.homeImagesSpacer)}></div>
+      <h4 className={css(styles.homeImagesText1)}>I take pictures for money.</h4>
+      <h4 className={css(styles.homeImagesText2)}>More money<br/>means better pictures.</h4>
+      <h4 className={
+        css(styles.homeImagesMoneyText)} 
+        onClick={goToPricing}
+        onMouseOver={inflate}
+        onMouseOut={deflate}
+      >
+        Give me money
+      </h4>
   </div>
   )
 }
