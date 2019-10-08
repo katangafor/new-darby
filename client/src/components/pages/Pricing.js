@@ -23,19 +23,22 @@ const Pricing = (props) => (
         type="Personal" 
         price="$60 per hour" 
         description="For individuals tryna become famous or something"
+        features={['Some retouching', '10 billion megapixel downloads', 'DVD collection of every Adam Sandler movie', 'a coupon for Bed Bath & Beyond']}
       />
       <Price 
         type="A la Carte" 
         price="$5 - $15 per picture" 
         description="For like, restaurants and business facebook pages n stuff"
+        features={['Lots of retouching', '10 billion megapixel downloads', 'DVD collection of every Adam Sandler movie', 'a coupon for Bed Bath & Beyond', 'A collection of fine pistachio powders']}
       />
       <Price 
         type="Real Estate" 
         price="$200 per home" 
         description="For houses or apartments or whatever that need pictures taken of them"
+        features={['Literally infinite retouching', '10 billion megapixel downloads', 'DVD collection of every Adam Sandler movie', 'a coupon for Bed Bath & Beyond', 'a collection of fine pistachio powders', 'Mustaches crudely drawn on all pictures']}
       />
     </div>
-    <p>Have something else in mind? Send me a message with this nifty-as-fuck contact form!</p>
+    {/* <p>Have something else in mind? Send me a message with this nifty-as-fuck contact form!</p> */}
   </div>
 )
 

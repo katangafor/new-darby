@@ -9,16 +9,18 @@ const Price = (props) => {
 
   const styles = StyleSheet.create({
     priceContainer: {
-      border: '1px solid black',
-      background: 'linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5) )',
+      border: '1px solid #bdc3c7',
+      //background: 'linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5) )',
+      background: 'white',
       textAlign: 'center',
       width: 360,
       backgroundColor: props.backgroundColor,
       borderRadius: 10,
-      color: 'white'
+      color: 'black',
+      height: 'auto'
     },
     head: {
-      borderBottom: '1px solid black',
+      borderBottom: '1px solid #bdc3c7',
     },
     title: {
       fontSize: 25,
@@ -32,6 +34,17 @@ const Price = (props) => {
       paddingBottom: 40,
       width: '80%',
       margin: '0 auto',
+    },
+    features: {
+      padding: 0,
+      margin: 0
+    },
+    feature: {
+      listStyle: 'none',
+      padding: '20px 5px',
+      borderBottom: '1px solid #bdc3c7',
+      width: '70%',
+      margin: '0 auto'
     }
   })
 
@@ -43,9 +56,11 @@ const Price = (props) => {
           <h2 className={css(styles.description)}>{props.description}</h2>
         </div>
 
-        <p>All sorts of cool stuf</p>
-        <p>Even more features</p>
-        <p>wow look a third one</p>
+        <ul className={css(styles.features)}>
+          {props.features.map((feature) => {
+            return <li className={css(styles.feature)}>{feature}</li>
+          })}
+        </ul>
       </div>
     )
 }
