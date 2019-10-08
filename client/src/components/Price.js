@@ -1,7 +1,5 @@
 import React from 'react';
-import { StyleSheet, css } from 'aphrodite';
-
-import Header from './Header';
+import { StyleSheet, css } from 'aphrodite'
 
 // TODO I want all the styles to be together, so do I have to put the styles above the returned JSX? Sux. I thought stuff was hoisted? 
 
@@ -10,14 +8,21 @@ const Price = (props) => {
   const styles = StyleSheet.create({
     priceContainer: {
       border: '1px solid #bdc3c7',
-      //background: 'linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5) )',
       background: 'white',
       textAlign: 'center',
-      width: 360,
       backgroundColor: props.backgroundColor,
       borderRadius: 10,
       color: 'black',
-      height: 'auto'
+      height: 'auto',
+      // mobile
+      '@media only screen and (max-width: 750px)': {
+        width: '90%',
+        margin: '10px auto'
+      },
+      // desktop
+      '@media only screen and (min-width: 750px)': {
+        width: 360,
+      }
     },
     head: {
       borderBottom: '1px solid #bdc3c7',
@@ -57,8 +62,8 @@ const Price = (props) => {
         </div>
 
         <ul className={css(styles.features)}>
-          {props.features.map((feature) => {
-            return <li className={css(styles.feature)}>{feature}</li>
+          {props.features.map((feature, index) => {
+            return <li className={css(styles.feature)} key={index}>{feature}</li>
           })}
         </ul>
       </div>

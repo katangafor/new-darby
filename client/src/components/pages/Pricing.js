@@ -33,7 +33,7 @@ const Pricing = (props) => (
       />
       <Price 
         type="Real Estate" 
-        price="$200 per home" 
+        price="$150 - $350 per home" 
         description="For houses or apartments or whatever that need pictures taken of them"
         features={['Literally infinite retouching', '10 billion megapixel downloads', 'DVD collection of every Adam Sandler movie', 'a coupon for Bed Bath & Beyond', 'a collection of fine pistachio powders', 'Mustaches crudely drawn on all pictures']}
       />
@@ -47,15 +47,26 @@ export default Pricing;
 const styles = StyleSheet.create({
   pricingPage: {
     background: 'linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, 0) ), url(' + background + ')',
-    backgroundRepeat: 'no-repeat'
+    backgroundRepeat: 'no-repeat',
+    // mobile
+    '@media only screen and (max-width: 750px)': {
+      backgroundSize: 'auto 100vh',
+    }
   },
   info: {
-    color: 'white'
+    color: 'white',
+    // mobile
+    '@media only screen and (max-width: 750px)': {
+      marginBottom: 400
+    }
   },
   pricing: {
-    display: 'flex',
     justifyContent: 'space-around',
-    margin: '0px 10px'
+    margin: '0px 10px',
+    // desktop
+    '@media only screen and (min-width: 750px)': {
+      display: 'flex',
+    }
   },
   spacer: {
     height: 55
