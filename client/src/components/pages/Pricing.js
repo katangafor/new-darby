@@ -50,7 +50,10 @@ const styles = StyleSheet.create({
     backgroundRepeat: 'no-repeat',
     // mobile
     '@media only screen and (max-width: 750px)': {
+      width: '100vw',
+      height: '100vh',
       backgroundSize: 'auto 100vh',
+      backgroundPosition: 'top right -110px',
     }
   },
   info: {
