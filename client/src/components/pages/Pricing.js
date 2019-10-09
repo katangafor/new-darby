@@ -46,14 +46,18 @@ export default Pricing;
 
 const styles = StyleSheet.create({
   pricingPage: {
-    background: 'linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, 0) ), url(' + background + ')',
     backgroundRepeat: 'no-repeat',
     // mobile
     '@media only screen and (max-width: 750px)': {
+      background: 'linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .4) ), url(' + background + ')',
       width: '100vw',
       height: '100vh',
       backgroundSize: 'auto 100vh',
       backgroundPosition: 'top left',
+    },
+    // desktop
+    '@media only screen and (min-width: 750px)': {
+      background: 'linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, 0) ), url(' + background + ')'
     }
   },
   info: {
