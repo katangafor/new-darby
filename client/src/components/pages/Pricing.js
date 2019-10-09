@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
       width: '100vw',
       height: '100vh',
       backgroundSize: 'auto 100vh',
-      backgroundPosition: 'top right -110px',
+      backgroundPosition: 'top left',
     }
   },
   info: {
