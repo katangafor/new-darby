@@ -14,6 +14,7 @@ const Price = (props) => {
       borderRadius: 10,
       color: 'black',
       height: 'auto',
+      marginBottom: 40,
       // mobile
       '@media only screen and (max-width: 750px)': {
         width: '90%',

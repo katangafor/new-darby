@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
+
 import Header from '../Header';
 import HomeImage from '../HomeImage';
 import Testimonial from '../Testimonial';
 import Info from '../Info';
 import CategoryImage from '../CategoryImage';
+import Footer from '../Footer';
 
 // TODO make the category images into links
 
@@ -54,8 +56,8 @@ const Home = () => (
     <CategoryImage 
       image={require('../../pics/home/buddy.jpg')} 
       offset="-400px" 
-      text="portraits"
-      link="portraits"
+      text="real estate"
+      link="real-estate"
     />
     <CategoryImage 
       image={require('../../pics/home/banana-split.jpg')} 
@@ -66,10 +68,10 @@ const Home = () => (
     <CategoryImage 
       image={require('../../pics/home/gucci.jpg')} 
       offset="-450px" 
-      text="social media" 
-      link="social-media"
+      text="schedule a session" 
+      link="scheduling"
     />
-  
+    <Footer />
   </>
 )
 

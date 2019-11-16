@@ -5,18 +5,17 @@ import Header from '../Header';
 import Info from '../Info';
 import Price from '../Price';
 import background from '../../pics/misc/tofino.jpg';
+import Footer from '../Footer';
 
-const Pricing = (props) => (
+const Pricing = () => (
   <div className={css(styles.pricingPage)}>
     <Header />
     <div className={css(styles.spacer)}></div>
     <Info color="white"
       first="It's true: I'm doing this for money"
-      second="But at the same time, I'm not doing this to get rich. I'm just doing it 
-      to make some easy cheese so I can have time and money to fix my boat, sail it around,
-      and work on my other plethora of ideas to make 100 million dollars. So yeah, you're not
-      gonna find prices better than this. Also, the other people around here don't take particularly
-      great pix... but I take darbyPix"
+      second="It's time to get rich. Real estate photography is an ez pz way to do that. I'll start by
+      being better than the competition, and then I'll use my skillz to land a sweet gig running a
+      yacht photography studio. Then I'll buy my own yacht and live on it."
     />
     <div className={css(styles.pricing)}>
       <Price 
@@ -39,6 +38,7 @@ const Pricing = (props) => (
       />
     </div>
     {/* <p>Have something else in mind? Send me a message with this nifty-as-fuck contact form!</p> */}
+    <Footer />
   </div>
 )
 

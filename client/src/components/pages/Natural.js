@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
+
 import Header from '../Header';
 import Info from '../Info';
 import Gallery from '../Gallery';
+import Footer from '../Footer';
 
 const Natural = () => (
   <div>
@@ -18,6 +20,7 @@ const Natural = () => (
       where I attempt to beat the shit out of a horse, and lose."
     />
     <Gallery />
+    <Footer />
   </div>
 )
 

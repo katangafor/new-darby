@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
+
 import Header from '../Header';
 import Info from '../Info';
 import Gallery from '../Gallery';
+import Footer from '../Footer';
 
 const getInfo = () => {
   fetch('/info')
@@ -13,7 +15,7 @@ const getInfo = () => {
 }
 
 const SocialMedia = () => (
-  <div>
+  <>
     <Header />
     <div className={css(styles.spacer)}></div>
     <Info
@@ -26,7 +28,8 @@ const SocialMedia = () => (
     />
     <Gallery />
     <button onClick={getInfo}>Get some info</button>
-  </div>
+    <Footer />
+  </>
 )
 
 const styles = StyleSheet.create({

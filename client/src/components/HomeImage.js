@@ -22,6 +22,7 @@ const HomeImage = (props) => {
         onClick={goToPricing}
         onMouseOver={inflate}
         onMouseOut={deflate}
+        tabIndex="0"
       >
         Give me money
       </h4>

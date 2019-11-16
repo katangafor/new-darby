@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite'; 
-import { Link, withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import HamburgerMenu from 'react-hamburger-menu';
 
 class Header extends React.Component {
@@ -59,13 +59,39 @@ class Header extends React.Component {
           this.state.menuOpen && styles.menuIsOpen)
         }
       >
-        <h2 className={css(styles.headersLogo)} onClick={this.goHome}>DarbyPix</h2>
+        <h2 className={css(styles.headersLogo)} onClick={this.goHome} tabIndex="0">DarbyPix</h2>
         <ul className={css(styles.menu)}>
-          <li className={css(styles.menuItem)}><Link to="/portraits" className={css(styles.menuItemLink)}>Portraits</Link></li>
-          <li className={css(styles.menuItem)}><Link to="/natural" className={css(styles.menuItemLink)}>Natural</Link></li>
-          <li className={css(styles.menuItem)}><Link to="/social-media" className={css(styles.menuItemLink)}>Social Media</Link></li>
-          <li className={css(styles.menuItem)}><Link to="/scheduling" className={css(styles.menuItemLink)}>Scheduling</Link></li>
-          <li className={css(styles.menuItem)}><Link to="/pricing" className={css(styles.menuItemLink)}>Pricing</Link></li>
+          <li className={css(styles.menuItem)}>
+            <NavLink 
+              to="/real-estate" 
+              className={css(styles.menuItemLink)} 
+              activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Real Estate</NavLink>
+          </li>
+          <li className={css(styles.menuItem)}>
+            <NavLink 
+              to="/natural" 
+              className={css(styles.menuItemLink)} 
+              activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Natural</NavLink>
+          </li>
+          <li className={css(styles.menuItem)}>
+            <NavLink 
+              to="/scheduling" 
+              className={css(styles.menuItemLink)} 
+              activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Scheduling</NavLink>
+          </li>
+          <li className={css(styles.menuItem)}>
+            <NavLink 
+              to="/pricing" 
+              className={css(styles.menuItemLink)} 
+              activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Pricing</NavLink>
+          </li>
+          <li className={css(styles.menuItem)}>
+            <NavLink 
+              to="/portal" 
+              className={css(styles.portal)} 
+              activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Client portal</NavLink>
+          </li>
+
         </ul>
         <div className={css(styles.headersBurgerIcon)}>
         <HamburgerMenu
@@ -204,8 +230,40 @@ const styles = StyleSheet.create({
         transform: 'translate(0px, 7px)'
       }
     }
+  },
+  portal: {
+    color: 'white',
+    textDecoration: 'none',
+    fontWeight: '300',
+
+    // mobile
+    '@media only screen and (max-width: 750px)': {
+      display: 'block',
+      padding: 5,
+      width: '100%',
+      ':hover': {
+        backgroundColor: 'white',
+        color: 'black'
+      }
+    },
+    // desktop
+    '@media only screen and (min-width: 750px)': {
+      position: 'relative',
+      bottom: '12px',
+      padding: '8px',
+      display: 'inline-block',
+      color: 'black',
+      backgroundColor: 'white',
+      borderRadius: 200,
+      transition: 'transform .3s ease-in-out',
+      ':hover': {
+        transform: 'translate(0px, 7px)'
+      }
+    }
+  },
+  menuItemActive: {
+    transform: 'translate(0px, 7px)'
   }
 })
 
 export default withRouter(Header);
-
