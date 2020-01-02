@@ -178,7 +178,8 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontSize: 40,
       marginTop: 0,
-      padding: 0
+      padding: 0,
+      width: '100%'
     },
     // desktop
     '@media only screen and (min-width: 750px)': {
@@ -251,13 +252,14 @@ const styles = StyleSheet.create({
       position: 'relative',
       bottom: '12px',
       padding: '8px',
+      fontWeight: '600',
       display: 'inline-block',
       color: 'black',
       backgroundColor: 'white',
       borderRadius: 200,
-      transition: 'transform .3s ease-in-out',
+      transition: 'background-color .6s ease-in-out',
       ':hover': {
-        transform: 'translate(0px, 7px)'
+        backgroundColor: '#f1c40f'
       }
     }
   },

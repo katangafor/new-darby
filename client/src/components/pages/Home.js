@@ -12,7 +12,7 @@ import Footer from '../Footer';
 
 const Home = () => (
   <>
-    <Header />
+    {/* <Header /> */}
     <HomeImage />
     <div className={css(styles.testimonialContainer)}>
       <Testimonial

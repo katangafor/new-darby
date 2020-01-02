@@ -7,9 +7,6 @@ import { inflate, deflate } from '../styles/animations';
 
 // background position and background should be inside of the aphrodite thing, so that it can use media queries
 
-// problem: styles is an object, so if it's outside the component, it can't access the props
-// solution: make styles into a function that returns an object, and takes one parameter
-
 const CategoryImage = (props) => (
 <div 
   className={css(styles.container)}
