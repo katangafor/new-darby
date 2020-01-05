@@ -2,10 +2,8 @@ import React, { useState, useCallback } from "react";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { StyleSheet, css } from 'aphrodite';
-import images from "../pics/portaits/portaitsArray";
 
-
-function App() {
+function CustomGallery({ images }) {
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
@@ -60,4 +58,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default App;
+export default CustomGallery;

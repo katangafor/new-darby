@@ -5,6 +5,7 @@ import Header from '../Header';
 import Info from '../Info';
 import Gallery from '../Gallery';
 import Footer from '../Footer';
+import images from '../../pics/portaits/portaitsArray';
 
 // TODO add a max width to the text box
 
@@ -18,7 +19,7 @@ const Portraits = () => (
       something. Something about how important it is to accurately represent a home, and it takes more than a
       fancy camera to do that. "
     />
-    <Gallery />
+    <Gallery images={images}/>
     <Footer />
   </>
 )

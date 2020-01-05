@@ -69,9 +69,9 @@ class Header extends React.Component {
           </li>
           <li className={css(styles.menuItem)}>
             <NavLink 
-              to="/natural" 
+              to="/portfolio" 
               className={css(styles.menuItemLink)} 
-              activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Natural</NavLink>
+              activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Portfolio</NavLink>
           </li>
           <li className={css(styles.menuItem)}>
             <NavLink 

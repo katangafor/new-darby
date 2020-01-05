@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
 import Header from '../Header';
@@ -7,12 +7,16 @@ import Testimonial from '../Testimonial';
 import Info from '../Info';
 import CategoryImage from '../CategoryImage';
 import Footer from '../Footer';
+import firebase from '../../firebase/firebase';
+import { userInfo } from 'os';
 
 // TODO make the category images into links
 
-const Home = () => (
-  <>
-    {/* <Header /> */}
+const Home = () => {
+
+  return (
+    <>
+    <Header />
     <HomeImage />
     <div className={css(styles.testimonialContainer)}>
       <Testimonial
@@ -73,7 +77,8 @@ const Home = () => (
     />
     <Footer />
   </>
-)
+  )
+}
 
 export default Home;
 
