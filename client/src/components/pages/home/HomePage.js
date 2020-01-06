@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
-import Header from '../Header';
-import HomeImage from '../HomeImage';
-import Testimonial from '../Testimonial';
-import Info from '../Info';
-import CategoryImage from '../CategoryImage';
-import Footer from '../Footer';
-import firebase from '../../firebase/firebase';
+import Header from '../misc/Header';
+import HomeImage from './HomeImage';
+import Testimonial from './Testimonial';
+import Info from '../misc/Info';
+import CategoryImage from '../../pages/home/CategoryImage';
+import Footer from '../misc/Footer';
+import firebase from '../../../firebase/firebase';
 import { userInfo } from 'os';
 
 // TODO make the category images into links
 
-const Home = () => {
+const HomePage = () => {
 
   return (
     <>
@@ -58,19 +58,19 @@ const Home = () => {
       including the following: I am cheaper, less stupid, and more smart than the competition. "
     />
     <CategoryImage 
-      image={require('../../pics/home/buddy.jpg')} 
+      image={require('../../../pics/home/buddy.jpg')} 
       offset="-400px" 
       text="real estate"
       link="real-estate"
     />
     <CategoryImage 
-      image={require('../../pics/home/banana-split.jpg')} 
+      image={require('../../../pics/home/banana-split.jpg')} 
       offset="-110px" 
       text="natural"
       link="natural"
     />
     <CategoryImage 
-      image={require('../../pics/home/gucci.jpg')} 
+      image={require('../../../pics/home/gucci.jpg')} 
       offset="-450px" 
       text="schedule a session" 
       link="scheduling"
@@ -80,7 +80,7 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default HomePage;
 
 const styles = StyleSheet.create({
   testimonialContainer: {

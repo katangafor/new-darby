@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import HomePage from '../components/pages/Home';
+import HomePage from '../components/pages/home/HomePage';
 import RealEstate from '../components/pages/RealEstate'
-import Pricing from '../components/pages/Pricing';
-import Portfolio from '../components/pages/Portfolio';
-import Scheduling from '../components/pages/Scheduling';
+import PricingPage from '../components/pages/pricing/PricingPage';
+import PortfolioPage from '../components/pages/portfolio/PortfolioPage';
+import SchedulingPage from '../components/pages/scheduling/SchedulingPage';
 import NotFoundPage from '../components/pages/NotFoundPage';
 import HiddenSignInPage from '../components/pages/HiddenSignInPage';
 import AddPicsPage from '../components/pages/AddPicsPage';
@@ -15,9 +15,9 @@ const AppRouter = () => (
       <Switch>
         <Route path="/" component={HomePage} exact={true} />
         <Route path="/real-estate" component={RealEstate} />
-        <Route path="/portfolio" component={Portfolio} />
-        <Route path="/scheduling" component={Scheduling} />
-        <Route path="/pricing" component={Pricing} />
+        <Route path="/portfolio" component={PortfolioPage} />
+        <Route path="/scheduling" component={SchedulingPage} />
+        <Route path="/pricing" component={PricingPage} />
         <Route path="/hi-darby" component={HiddenSignInPage} />
         <Route path="/add-pics" component={AddPicsPage} />
         <Route component={NotFoundPage} />

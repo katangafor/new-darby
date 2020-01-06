@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
-import DatePicker from '../SchedulingForm';
-import Header from '../Header';
+import DatePicker from './SchedulingForm';
+import Header from '../misc/Header';
 
 const Scheduling = () => (
   <>

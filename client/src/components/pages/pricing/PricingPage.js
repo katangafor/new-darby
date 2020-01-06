@@ -1,13 +1,13 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
-import Header from '../Header';
-import Info from '../Info';
-import Price from '../Price';
-import background from '../../pics/misc/tofino.jpg';
-import Footer from '../Footer';
+import Header from '../misc/Header';
+import Info from '../misc/Info';
+import Price from './Price';
+import background from '../../../pics/misc/tofino.jpg';
+import Footer from '../misc/Footer';
 
-const Pricing = () => (
+const PricingPage = () => (
   <div className={css(styles.pricingPage)}>
     <Header />
     <div className={css(styles.spacer)}></div>
@@ -42,7 +42,7 @@ const Pricing = () => (
   </div>
 )
 
-export default Pricing;
+export default PricingPage;
 
 const styles = StyleSheet.create({
   pricingPage: {

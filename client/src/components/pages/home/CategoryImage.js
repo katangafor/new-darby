@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { StyleSheet, css } from 'aphrodite';
 import { withRouter } from 'react-router-dom';
 
-import { inflate, deflate } from '../styles/animations';
+import { inflate, deflate } from '../../../styles/animations';
 
 // background position and background should be inside of the aphrodite thing, so that it can use media queries
 

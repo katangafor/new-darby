@@ -1,28 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
-import firebase from '../../firebase/firebase';
+import firebase from '../../../firebase/firebase';
 
-import Header from '../Header';
-import Info from '../Info';
-import Gallery from '../Gallery';
-import Footer from '../Footer';
+import Header from '../misc/Header';
+import Info from '../misc/Info';
+import Gallery from '../misc/Gallery';
+import Footer from '../misc/Footer';
+import AlbumContent from './AlbumContent';
 
-const Portfolio = () => {
+const PortfolioPage = () => {
 
   const [pictures, setPictures] = useState('');
   const [albumNames, setAlbumNames] = useState([]);
-
-  const [display, setDisplay] = useState(false);
+  const [selected, setSelected] = useState('');
 
   useEffect(() => {
-    fetchPictures();
     fetchAlbumNames();
   }, [])
 
   // pass this down as an argument for the album content 
-  const fetchPictures = () => {
+  const fetchPictures = (albumName) => {
+    console.log('trying to fetch pictures...');
     let images = [];
-    firebase.database().ref('nature shit').once('value').then((snapshot) => {
+    firebase.database().ref(albumName).once('value').then((snapshot) => {
       snapshot.forEach((childSnapshot) => {
         let image = {
           src: childSnapshot.child('downloadURL').val(),
@@ -30,9 +30,10 @@ const Portfolio = () => {
           height: parseInt(childSnapshot.child('height').val())
         }
         images.push(image);
+        setPictures(images);
       })
+      setPictures(images);
     })
-    setPictures(images);
   }
 
   const fetchAlbumNames = () => {
@@ -41,11 +42,9 @@ const Portfolio = () => {
       snapshot.forEach((album) => {
         albums.push(album.key);
       })
+      setAlbumNames(albums);
     })
-    setAlbumNames(albums);
-  }
-
-  
+  }  
 
   return (
     <div>
@@ -54,18 +53,32 @@ const Portfolio = () => {
       <Info
         first="Look on my works, ye Mighty, and despair"
       />
-      <button onClick={(e) => console.log(pictures)}>click for pix</button>
+      <div className={css(styles.albumsContainer)}>
+        {albumNames.map((albumName) => {
+          return <AlbumContent 
+            albumName={albumName} 
+            key={albumName} 
+            selected={selected} 
+            setSelected={setSelected}
+            pictures={pictures}
+            fetchPictures={fetchPictures}
+          />
+        })}
+      </div>
+      {/* <button onClick={(e) => console.log(pictures)}>click for pix</button>
       <button onClick={() => setDisplay(true)}>make it happen</button>
-      {display && <Gallery images={pictures}/>}
+      {display && <Gallery images={pictures}/>} */}
       <Footer />
   </div>
   )
 }
 
+export default PortfolioPage;
+
 const styles = StyleSheet.create({
   spacer: {
     height: 55
+  },
+  albumsContainer: {
   }
 })
-
-export default Portfolio;

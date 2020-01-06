@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
-import Header from '../Header';
-import Info from '../Info';
-import Gallery from '../Gallery';
-import Footer from '../Footer';
+import Header from './misc/Header';
+import Info from './misc/Info';
+import Gallery from './misc/Gallery';
+import Footer from './misc/Footer';
 
 const getInfo = () => {
   fetch('/info')

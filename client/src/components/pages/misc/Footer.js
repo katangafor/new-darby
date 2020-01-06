@@ -1,15 +1,7 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
-import firebase from '../firebase/firebase';
-
 const Footer = () => {
-
-  const checkFirebase = () => {
-    firebase.database().ref('pls/bbe').set('ok').then(() => {
-      console.log('nailed it')
-    })
-  }
 
   return (
     <div className={css(styles.footer)}>
@@ -21,7 +13,6 @@ const Footer = () => {
       <div className={css(styles.footerColumn)}>
         <h3>We don't do cookies</h3>
         <p>We don't collect any information, we don't care about you enough to do that sort of thing</p>
-        <button onClick={checkFirebase}>check firebase</button>
       </div>
       <div className={css(styles.footerColumn)}>
         <h3>A third thing!</h3>

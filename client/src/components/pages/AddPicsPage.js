@@ -3,13 +3,13 @@ import { useDropzone } from 'react-dropzone';
 import { css, StyleSheet } from 'aphrodite';
 
 import firebase from '../../firebase/firebase';
-import Header from '../Header';
+import Header from './misc/Header';
 
 const AddPicsPage = () => {
 
   const [files, setFiles] = useState([]);
   const [addedFiles, setAddedFiles] = useState([]);
-  const [newAlbumName, setNewAlbumName] = useState([]);
+  const [newAlbumName, setNewAlbumName] = useState('');
   const [albumList, setAlbumList] = useState([]);
   const [selectedAlbum, setSelectedAlbum] = useState([]);
   const [width, setWidth] = useState('');
@@ -26,11 +26,11 @@ const AddPicsPage = () => {
   }, [])
 
   const onDrop = useCallback(acceptedFiles => {
-    if (acceptedFiles.length > 1) {
-      alert('Sorry darby you can only do one file at a time!');
-    } else {
+    // if (acceptedFiles.length > 1) {
+    //   alert('Sorry darby you can only do one file at a time!');
+    // } else {
       setFiles(acceptedFiles);
-    }
+    // }
   }, [])
 
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop});
@@ -41,7 +41,7 @@ const AddPicsPage = () => {
       alert(`Darby! You didn't enter either the file, intended album, height or width!`);
     } else {
       files.forEach((file) => {
-        firebase.storage().ref(`portraits/${file.name}`).put(file).then((snapshot) => {
+        firebase.storage().ref(`${selectedAlbum}/${file.name}`).put(file).then((snapshot) => {
           setAddedFiles(files);
           return firebase.storage().ref(snapshot.metadata.fullPath).getDownloadURL();
         }).then((url) => {
@@ -57,9 +57,13 @@ const AddPicsPage = () => {
   }
 
   const submitAlbum = () => {
-    firebase.database().ref(`albums/${newAlbumName}`).set('').then((snapshot) => {
-      console.log(snapshot)
-    })
+    if (newAlbumName === '') {
+      alert('you have to type in an album name first!');
+    } else {
+      firebase.database().ref(`albums/${newAlbumName}`).set('').then((snapshot) => {
+        console.log(snapshot)
+      })
+    }
   }
 
   return (
@@ -85,7 +89,7 @@ const AddPicsPage = () => {
           }
         </div>
         <h3>Third, add dimensions to the picture</h3>
-        {files.length > 0 ? <p>{files[0].name}</p> : <p>No files here!</p>}
+        {files.length > 0 ? files.map((file) => <p>{file.name}</p>) : <p>No files here!</p>}
         <input
           type="number"
           placeholder="width"

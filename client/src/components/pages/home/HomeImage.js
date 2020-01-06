@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import { withRouter } from 'react-router-dom';
 
-import Background from '../pics/home/benOnCliff.jpg';
-import { headerHeight } from '../styleSettings';
-import { inflate, deflate } from '../styles/animations';
+import Background from '../../../pics/home/benOnCliff.jpg';
+import { headerHeight } from '../../../styleSettings';
+import { inflate, deflate } from '../../../styles/animations';
 
 const HomeImage = (props) => {
 
