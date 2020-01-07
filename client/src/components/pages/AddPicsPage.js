@@ -16,7 +16,7 @@ const AddPicsPage = () => {
   const [height, setHeight] = useState('');
 
   useEffect(() => {
-    firebase.database().ref('albums').once('value').then((snapshot) => {
+    firebase.database().ref('albumNames').once('value').then((snapshot) => {
       let albums = [];
       snapshot.forEach((child) => {
         albums.push(child.key);
@@ -45,11 +45,11 @@ const AddPicsPage = () => {
           setAddedFiles(files);
           return firebase.storage().ref(snapshot.metadata.fullPath).getDownloadURL();
         }).then((url) => {
-          return firebase.database().ref(`${selectedAlbum}/${file.name.substring(0, file.name.length - 4)}/downloadURL`).set(url);
+          return firebase.database().ref(`albums/${selectedAlbum}/${file.name.substring(0, file.name.length - 4)}/downloadURL`).set(url);
         }).then(() => {
-          firebase.database().ref(`${selectedAlbum}/${file.name.substring(0, file.name.length - 4)}/width`).set(width)
+          firebase.database().ref(`albums/${selectedAlbum}/${file.name.substring(0, file.name.length - 4)}/width`).set(width)
             .catch((error) => {console.log(error)});
-          firebase.database().ref(`${selectedAlbum}/${file.name.substring(0, file.name.length - 4)}/height`).set(height)
+          firebase.database().ref(`albums/${selectedAlbum}/${file.name.substring(0, file.name.length - 4)}/height`).set(height)
             .catch((error) => {console.log(error)});
         })
       }) 
@@ -60,7 +60,7 @@ const AddPicsPage = () => {
     if (newAlbumName === '') {
       alert('you have to type in an album name first!');
     } else {
-      firebase.database().ref(`albums/${newAlbumName}`).set('').then((snapshot) => {
+      firebase.database().ref(`albumNames/${newAlbumName}`).set('').then((snapshot) => {
         console.log(snapshot)
       })
     }
@@ -89,7 +89,7 @@ const AddPicsPage = () => {
           }
         </div>
         <h3>Third, add dimensions to the picture</h3>
-        {files.length > 0 ? files.map((file) => <p>{file.name}</p>) : <p>No files here!</p>}
+        {files.length > 0 ? files.map((file) => <p key={file.name}>{file.name}</p>) : <p>No files here!</p>}
         <input
           type="number"
           placeholder="width"

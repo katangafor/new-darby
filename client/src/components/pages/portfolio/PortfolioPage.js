@@ -8,43 +8,9 @@ import Gallery from '../misc/Gallery';
 import Footer from '../misc/Footer';
 import AlbumContent from './AlbumContent';
 
-const PortfolioPage = () => {
+const PortfolioPage = ({ albumNames, albums }) => {
 
-  const [pictures, setPictures] = useState('');
-  const [albumNames, setAlbumNames] = useState([]);
-  const [selected, setSelected] = useState('');
-
-  useEffect(() => {
-    fetchAlbumNames();
-  }, [])
-
-  // pass this down as an argument for the album content 
-  const fetchPictures = (albumName) => {
-    console.log('trying to fetch pictures...');
-    let images = [];
-    firebase.database().ref(albumName).once('value').then((snapshot) => {
-      snapshot.forEach((childSnapshot) => {
-        let image = {
-          src: childSnapshot.child('downloadURL').val(),
-          width: parseInt(childSnapshot.child('width').val()),
-          height: parseInt(childSnapshot.child('height').val())
-        }
-        images.push(image);
-        setPictures(images);
-      })
-      setPictures(images);
-    })
-  }
-
-  const fetchAlbumNames = () => {
-    let albums = [];
-    firebase.database().ref('albums').once('value').then((snapshot) => {
-      snapshot.forEach((album) => {
-        albums.push(album.key);
-      })
-      setAlbumNames(albums);
-    })
-  }  
+  const [selected, setSelected] = useState(0);
 
   return (
     <div>
@@ -53,22 +19,20 @@ const PortfolioPage = () => {
       <Info
         first="Look on my works, ye Mighty, and despair"
       />
-      <div className={css(styles.albumsContainer)}>
-        {albumNames.map((albumName) => {
-          return <AlbumContent 
-            albumName={albumName} 
-            key={albumName} 
-            selected={selected} 
-            setSelected={setSelected}
-            pictures={pictures}
-            fetchPictures={fetchPictures}
-          />
-        })}
+      <div className={css(styles.portfolioContainer)}>
+        <div className={css(styles.portfolioNav)}>
+          {albumNames && albumNames.map((album, index) =>{
+            return <button 
+              className={css(styles.portfolioNavButton)} 
+              key={album}
+              onClick={() => setSelected(index)}
+            >{album}</button>
+          })}
+        </div>
       </div>
-      {/* <button onClick={(e) => console.log(pictures)}>click for pix</button>
-      <button onClick={() => setDisplay(true)}>make it happen</button>
-      {display && <Gallery images={pictures}/>} */}
-      <Footer />
+      <button onClick={() => console.log(albums[0])}>click for pics</button>
+      {albums[selected] && <Gallery images={albums[selected]}/>}
+      {/* <Footer /> */}
   </div>
   )
 }
@@ -79,6 +43,26 @@ const styles = StyleSheet.create({
   spacer: {
     height: 55
   },
-  albumsContainer: {
+  portfolioPage: {
+    position: 'relative'
+  },
+  portfolioContainer: {
+    position: 'relative'
+  },
+  portfolioNav: {
+    position: 'relative',
+    left: 0,
+    width: 100,
+    height: '400px',
+    display: 'flex',
+    flexDirection: 'column',
+    color: 'black',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  portfolioNavButton: {
+    'media only screen and (max-width: 750px)': {
+
+    }
   }
 })

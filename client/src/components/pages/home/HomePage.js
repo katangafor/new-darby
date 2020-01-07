@@ -75,7 +75,7 @@ const HomePage = () => {
       text="schedule a session" 
       link="scheduling"
     />
-    <Footer />
+    {/* <Footer /> */}
   </>
   )
 }
