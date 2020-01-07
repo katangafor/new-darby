@@ -29,9 +29,8 @@ const PortfolioPage = ({ albumNames, albums }) => {
             >{album}</button>
           })}
         </div>
+        {albums[selected] && <Gallery images={albums[selected]}/>}
       </div>
-      <button onClick={() => console.log(albums[0])}>click for pics</button>
-      {albums[selected] && <Gallery images={albums[selected]}/>}
       {/* <Footer /> */}
   </div>
   )
@@ -47,12 +46,13 @@ const styles = StyleSheet.create({
     position: 'relative'
   },
   portfolioContainer: {
-    position: 'relative'
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'flex-start'
   },
   portfolioNav: {
     position: 'relative',
     left: 0,
-    width: 100,
     height: '400px',
     display: 'flex',
     flexDirection: 'column',
@@ -61,8 +61,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   portfolioNavButton: {
-    'media only screen and (max-width: 750px)': {
-
+    fontSize: 30,
+    padding: '30px 10px',
+    background: 'none',
+    border: 'none',
+    ':hover': {
+      color: 'gray',
+      cursor: 'pointer'
     }
   }
 })
