@@ -61,12 +61,7 @@ class Header extends React.Component {
       >
         <h2 className={css(styles.headersLogo)} onClick={this.goHome} tabIndex="0">DarbyPix</h2>
         <ul className={css(styles.menu)}>
-          <li className={css(styles.menuItem)}>
-            <NavLink 
-              to="/real-estate" 
-              className={css(styles.menuItemLink)} 
-              activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Real Estate</NavLink>
-          </li>
+         
           <li className={css(styles.menuItem)}>
             <NavLink 
               to="/portfolio" 
@@ -85,13 +80,6 @@ class Header extends React.Component {
               className={css(styles.menuItemLink)} 
               activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Pricing</NavLink>
           </li>
-          <li className={css(styles.menuItem)}>
-            <NavLink 
-              to="/portal" 
-              className={css(styles.portal)} 
-              activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Client portal</NavLink>
-          </li>
-
         </ul>
         <div className={css(styles.headersBurgerIcon)}>
         <HamburgerMenu

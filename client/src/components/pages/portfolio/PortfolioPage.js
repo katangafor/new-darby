@@ -68,6 +68,10 @@ const styles = StyleSheet.create({
     ':hover': {
       color: 'gray',
       cursor: 'pointer'
+    },
+    ':focus': {
+      color: 'gray',
+      outline: 'none'
     }
   }
 })

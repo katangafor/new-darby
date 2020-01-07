@@ -65,7 +65,6 @@ const AppRouter = () => {
       <>
         <Switch>
           <Route path="/" component={HomePage} exact={true} />
-          <Route path="/real-estate" component={RealEstate} />
           <Route path="/portfolio" render={() => <PortfolioPage albumNames={albumNames} albums={albums} />}/>
           <Route path="/scheduling" component={SchedulingPage} />
           <Route path="/pricing" component={PricingPage} />
