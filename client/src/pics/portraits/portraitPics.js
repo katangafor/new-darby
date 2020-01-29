@@ -44,5 +44,14 @@ export default [
     width: 37,
     height: 47
   },
-
+  {
+    src: require('./bars.jpg'),
+    width: 35,
+    height: 23
+  },
+  {
+    src: require('./beard.jpg'),
+    width: 32,
+    height: 49
+  },
 ]
