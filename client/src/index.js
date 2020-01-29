@@ -21,4 +21,6 @@ ReactDOM.render(<App />, document.getElementById('root'));
     - react-big-calendar doesn't look bad for darbyPix
     - an SVG logo would let me do dope ass anime line drawing on it
 
+  So maybe firebase wasn't the whole problem: https://github.com/neptunian/react-photo-gallery/issues/157
+
 */

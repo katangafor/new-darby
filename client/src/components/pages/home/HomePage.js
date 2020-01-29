@@ -14,17 +14,6 @@ import { userInfo } from 'os';
 
 const HomePage = () => {
 
-  const [imageStatus, setImageStatus] = useState('');
-
-  useEffect(() => {
-    const img = new Image(200, 200);
-    img.src = "https://firebasestorage.googleapis.com/v0/b/darby-pix.appspot.com/o/nature%2FDSC00095.jpg?alt=media&token=229bbe56-eb77-48a9-9778-750ea3b665bb";
-    img.onload = () => {
-      setImageStatus('ready boi');
-      document.body.appendChild(img);
-    }
-  }, [])
-
   return (
     <>
     <Header />

@@ -6,11 +6,12 @@ import Header from '../misc/Header';
 import Info from '../misc/Info';
 import Gallery from '../misc/Gallery';
 import Footer from '../misc/Footer';
-import AlbumContent from './AlbumContent';
+import naturalPics from '../../../pics/natural/naturalPics';
+import portraitPics from '../../../pics/portraits/portraitPics';
 
-const PortfolioPage = ({ albumNames, albums }) => {
+const PortfolioPage = () => {
 
-  const [selected, setSelected] = useState(0);
+  const [currentAlbum, setCurrentAlbum] = useState(naturalPics);
 
   return (
     <div>
@@ -21,15 +22,18 @@ const PortfolioPage = ({ albumNames, albums }) => {
       />
       <div className={css(styles.portfolioContainer)}>
         <div className={css(styles.portfolioNav)}>
-          {albumNames && albumNames.map((album, index) =>{
-            return <button 
-              className={css(styles.portfolioNavButton)} 
-              key={album}
-              onClick={() => setSelected(index)}
-            >{album}</button>
-          })}
+          <button 
+            onClick={() => setCurrentAlbum(naturalPics)}
+            className={css(styles.portfolioNavButton)} >
+            natural
+          </button>
+          <button 
+            onClick={() => setCurrentAlbum(portraitPics)}
+            className={css(styles.portfolioNavButton)} >
+            portraits
+          </button>
         </div>
-        {albums[selected] && <Gallery images={albums[selected]}/>}
+        <Gallery images={currentAlbum} />
       </div>
       {/* <Footer /> */}
   </div>

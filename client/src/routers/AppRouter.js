@@ -13,59 +13,12 @@ import firebase from '../firebase/firebase';
 
 const AppRouter = () => {
 
-  const [albumNames, setAlbumNames] = useState([]);
-  const [albums, setAlbums] = useState([]);
-
-  const fetchAlbumNames = () => {
-    let albums = [];
-    firebase.database().ref('albumNames').once('value').then((snapshot) => {
-      snapshot.forEach((album) => {
-        albums.push(album.key);
-      })
-      setAlbumNames(albums);
-    })
-  }
-
-  const fetchPictures = () => {
-    console.log('trying to fetch pictures...');
-    let albums = [];
-    firebase.database().ref('albums').once('value').then((snapshot) => {
-      snapshot.forEach((childSnapshot) => {
-        let album = [];
-        childSnapshot.forEach((grandchildSnapshot) => {
-          let image = {
-            src: grandchildSnapshot.child('downloadURL').val(),
-            width: parseInt(grandchildSnapshot.child('width').val()),
-            height: parseInt(grandchildSnapshot.child('height').val())
-          }
-          album.push(image);
-        })
-        albums.push(album);
-      })
-      // snapshot.forEach((childSnapshot) => {
-      //   let image = {
-      //     src: childSnapshot.child('downloadURL').val(),
-      //     width: parseInt(childSnapshot.child('width').val()),
-      //     height: parseInt(childSnapshot.child('height').val())
-      //   }
-      //   images.push(image);
-      //   setPictures(images);
-      // })
-      setAlbums(albums)
-    })
-  }
-
-  useEffect(() => {
-    fetchAlbumNames();
-    fetchPictures();
-  }, [])
-
   return (
     <Router >
       <>
         <Switch>
           <Route path="/" component={HomePage} exact={true} />
-          <Route path="/portfolio" render={() => <PortfolioPage albumNames={albumNames} albums={albums} />}/>
+          <Route path="/portfolio" component={PortfolioPage} />
           <Route path="/scheduling" component={SchedulingPage} />
           <Route path="/pricing" component={PricingPage} />
           <Route path="/hi-darby" component={HiddenSignInPage} />
