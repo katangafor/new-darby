@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import HomePage from '../components/pages/home/HomePage';
-import RealEstate from '../components/pages/RealEstate'
 import PricingPage from '../components/pages/pricing/PricingPage';
 import PortfolioPage from '../components/pages/portfolio/PortfolioPage';
 import SchedulingPage from '../components/pages/scheduling/SchedulingPage';
 import NotFoundPage from '../components/pages/NotFoundPage';
 import HiddenSignInPage from '../components/pages/HiddenSignInPage';
 import AddPicsPage from '../components/pages/AddPicsPage';
-import firebase from '../firebase/firebase';
 
 const AppRouter = () => {
 
