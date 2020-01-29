@@ -29,6 +29,20 @@ export default [
     width: 32,
     height: 49
   },
-  
+  {
+    src: require('./lol.jpg'),
+    width: 32,
+    height: 49
+  },
+  {
+    src: require('./yellow.jpg'),
+    width: 32,
+    height: 49
+  },
+  {
+    src: require('./alissa.jpg'),
+    width: 37,
+    height: 47
+  },
 
 ]
