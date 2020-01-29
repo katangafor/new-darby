@@ -9,11 +9,12 @@ ReactDOM.render(<App />, document.getElementById('root'));
   GOOD CALENDAR COMPONENT
 
   Next steps
-    - have different buttons that, when clicked, load up the array of image objects,
-      and pass them to a component that gets rendered?
+    - load all the pics up
+    - change snippet on front page
+    - buttons on left should be position: 'fixed' and have a spacer div underneath, and clicking should scroll to top
 
   Big fixes
-    - on mobile, the header is bigger than the body of the whole page
+    - on mobile, the footer is bigger than the body of the whole page
 
   Nice-to-haves:
     - this fricking udemy course plssss https://www.udemy.com/course/svg-animation/

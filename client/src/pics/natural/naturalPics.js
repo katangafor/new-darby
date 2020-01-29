@@ -1,5 +1,15 @@
 export default [
   {
+    src: require('./clouds.jpg'),
+    width: 49,
+    height: 33
+  },
+  {
+    src: require('./house.jpg'),
+    width: 30,
+    height: 38
+  },
+  {
     src: require('./beach-2.jpg'),
     width: 49,
     height: 32
@@ -25,11 +35,6 @@ export default [
     height: 33
   },
   {
-    src: require('./clouds.jpg'),
-    width: 49,
-    height: 33
-  },
-  {
     src: require('./cliff.jpg'),
     width: 30,
     height: 38
@@ -45,17 +50,17 @@ export default [
     height: 33
   },
   {
-    src: require('./house.jpg'),
-    width: 30,
-    height: 38
-  },
-  {
     src: require('./ocean.jpg'),
     width: 49,
     height: 33
   },
   {
     src: require('./sunset.jpg'),
+    width: 49,
+    height: 33
+  },
+  {
+    src: require('./scotland-2.jpg'),
     width: 49,
     height: 33
   },
@@ -93,6 +98,11 @@ export default [
     src: require('./pier.jpg'),
     width: 49,
     height: 33
+  },
+  {
+    src: require('./boats.jpg'),
+    width: 30,
+    height: 38
   },
   {
     src: require('./scotland.jpg'),
