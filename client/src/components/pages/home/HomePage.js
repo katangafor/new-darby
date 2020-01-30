@@ -51,12 +51,21 @@ const HomePage = () => {
       />
     </div>
     
-    <Info 
-      first="Hi, I'm Darby."
-      second="I take very pretty pictures as a professional photographer 
-      in the Santa Monica area. There are many reasons why I am the best one, 
-      including the following: I am cheaper, less stupid, and more smart than the competition. "
-    />
+    <div className={css(styles.info)}>
+      <h3 className={css(styles.infoTitle)}>Hi, I’m Darby, an LA based photographer. </h3>
+      <h3 className={css(styles.infoContent)}>
+        As an East Coast transplant, I don’t take California’s vibrant landscapes and culture for granted. 
+        Photography is my way of connecting with and appreciating the people and places around me. 
+      </h3>
+      <h3 className={css(styles.infoContent)}>
+        My body of work consists of both commercial and personal projects, though not specializing in any 
+        one niche. Rather, my affinity for travel, people, and unique experiences has led me to work mainly 
+        in portraiture, adventure photography, and lifestyle/branding work. But I love it all.
+      </h3>
+      <h3 className={css(styles.infoContent)}>
+      Contact me with any inquiries, or follow along on instagram, @elisadarbster.
+      </h3>
+    </div>
     <CategoryImage 
       image={require('../../../pics/home/buddy.jpg')} 
       offset="-400px" 
@@ -83,6 +92,24 @@ const HomePage = () => {
 export default HomePage;
 
 const styles = StyleSheet.create({
+  
+  info: {
+    textAlign: 'center',
+    fontSize: 20,
+    width: '80%',
+    margin: '0 auto',
+    marginBottom: 50,
+    maxWidth: 700
+  },
+  infoTitle: {
+    fontSize: 40,
+    fontWeight: '300'
+  },
+  infoContent: {
+    fontSize: 20,
+    fontWeight: '200',
+    textAlign: 'left'
+  },
   testimonialContainer: {
     '@media only screen and (min-width: 750px)': {
       display: 'flex',
