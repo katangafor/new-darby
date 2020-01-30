@@ -60,17 +60,6 @@ const styles = StyleSheet.create({
     marginTop: 100,
     
   },
-  homeImagesMoneyText: {
-    fontWeight: '300',
-    fontSize: 30,
-    display: 'inline-block',
-    marginTop: 60,
-    padding: 20,
-    border: 'solid white 1px',
-    ':hover': {
-      cursor: 'pointer'
-    }
-  },
   makeAccountButtonContainerContainer: {
     paddingBottom: 50
   },
@@ -101,8 +90,8 @@ const styles = StyleSheet.create({
   makeAccountButtonText2: {
     position: 'relative',
     top: 10,
-    color: 'white',
-    backgroundColor: 'black',
+    color: 'black',
+    backgroundColor: 'white',
     padding: '30px 0px'
   },
 })
