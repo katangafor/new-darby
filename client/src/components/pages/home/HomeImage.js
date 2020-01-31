@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     
   },
   makeAccountButtonContainerContainer: {
-    paddingBottom: 50
+    paddingBottom: 80
   },
   makeAccountButtonContainer: {
     height: 80,
