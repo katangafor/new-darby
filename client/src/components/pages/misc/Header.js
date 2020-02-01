@@ -59,9 +59,14 @@ class Header extends React.Component {
           this.state.menuOpen && styles.menuIsOpen)
         }
       >
-        <h2 className={css(styles.headersLogo)} onClick={this.goHome} tabIndex="0">DarbyPix</h2>
+        <h2 className={css(styles.headersLogo)} onClick={this.goHome} tabIndex="0">Elisa Darby</h2>
         <ul className={css(styles.menu)}>
-         
+          <li className={css(styles.menuItem)}>
+            <NavLink 
+              exact to="/" 
+              className={css(styles.menuItemLink)} 
+              activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Home</NavLink>
+          </li>
           <li className={css(styles.menuItem)}>
             <NavLink 
               to="/portfolio" 

@@ -52,7 +52,7 @@ const HomePage = () => {
     </div>
     
     <div className={css(styles.info)}>
-      <h3 className={css(styles.infoTitle)}>Hi, I’m Darby, an LA based photographer. </h3>
+      <h3 className={css(styles.infoTitle)}>Hi. I’m Darby, an LA based photographer. </h3>
       <h3 className={css(styles.infoContent)}>
         As an East Coast transplant, I don’t take California’s vibrant landscapes and culture for granted. 
         Photography is my way of connecting with and appreciating the people and places around me. 
@@ -67,21 +67,15 @@ const HomePage = () => {
       </h3>
     </div>
     <CategoryImage 
-      image={require('../../../pics/home/buddy.jpg')} 
-      offset="-400px" 
-      text="real estate"
-      link="real-estate"
+      image={require('../../../pics/natural/birds.jpg')} 
+      offset="0px" 
+      text="portfolio"
+      link="portfolio"
     />
     <CategoryImage 
       image={require('../../../pics/home/banana-split.jpg')} 
-      offset="-110px" 
-      text="natural"
-      link="natural"
-    />
-    <CategoryImage 
-      image={require('../../../pics/home/gucci.jpg')} 
-      offset="-450px" 
-      text="schedule a session" 
+      offset="0px" 
+      text="schedule a session"
       link="scheduling"
     />
     {/* <Footer /> */}

@@ -34,7 +34,7 @@ CategoryImage.propTypes = {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundSize: 'auto 100%',
+    backgroundSize: '100% auto',
     textAlign: 'center',
     color: 'white',
     position: 'relative',
@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
   },
   text: {
     margin: 0,
+    display: 'inline-block',
     position: 'relative',
     top: '70vh',
     textAlign: 'center',
