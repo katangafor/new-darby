@@ -11,13 +11,16 @@ const HomeImage = ({ history }) => {
   return (
     <div className={css(styles.homeImage)}>
       <div className={css(styles.homeImagesSpacer)}></div>
-      <h4 className={css(styles.homeImagesText1)}>I take pictures for money.</h4>
-      <h4 className={css(styles.homeImagesText2)}>More money<br/>means better pictures.</h4>
+      <h4 className={css(styles.homeImagesText1)}>Let’s face it, you need better pictures </h4>
+      <h4 className={css(styles.homeImagesText2)}>For that date on Tinder</h4>
+      <h4 className={css(styles.homeImagesText2)}>That job LinkedIn</h4>
+      <h4 className={css(styles.homeImagesText2)}>Or Your brand's new website</h4>
+      <h4 className={css(styles.homeImagesText3)}>Authentic photos for authentic people</h4>
       <div className={css(styles.makeAccountButtonContainerContainer)}>
         <div className={css(styles.makeAccountButtonContainer)}>
           <div onClick={() => {history.push('/portfolio')}} className={css(styles.makeAccountButtonContent)} tabIndex={0}>
-            <p>Give me money</p>
-            <p className={css(styles.makeAccountButtonText2)}>Give me money</p>
+            <p>Book now</p>
+            <p className={css(styles.makeAccountButtonText2)}>Book now</p>
           </div>
         </div>
       </div>
@@ -52,13 +55,50 @@ const styles = StyleSheet.create({
     fontWeight: '100',
     fontSize: 30,
     marginTop: 100,
-    marginBottom: 100,
+    marginBottom: 60,
+    // mobile
+    '@media only screen and (max-width: 750px)': {
+      fontSize: 23,
+      marginTop: 50,
+      marginBottom: 30
+    },
+    // desktop
+    '@media only screen and (min-width: 750px)': {
+      fontSize: 30,
+      marginTop: 100,
+      marginBottom: 60,
+      }
   },
   homeImagesText2: {
     fontWeight: '200',
-    fontSize: 30,
-    marginTop: 100,
-    
+    // mobile
+    '@media only screen and (max-width: 750px)': {
+      fontSize: 23,
+      marginTop: 10,
+      marginBottom: 10
+    },
+    // desktop
+    '@media only screen and (min-width: 750px)': {
+      fontSize: 30,
+      marginTop: 10,
+      marginBottom: 10
+      }
+  },
+  homeImagesText3: {
+    // mobile
+    '@media only screen and (max-width: 750px)': {
+      fontWeight: '300',
+      fontSize: 23,
+      marginTop: 30,
+      marginBottom: 15
+    },
+    // desktop
+    '@media only screen and (min-width: 750px)': {
+      fontWeight: '300',
+      fontSize: 30,
+      marginTop: 60,
+      marginBottom: 30
+      }
   },
   makeAccountButtonContainerContainer: {
     paddingBottom: 80
@@ -85,6 +125,10 @@ const styles = StyleSheet.create({
     ':hover': {
       bottom: 113,
       cursor: 'pointer'
+    },
+    // mobile
+    '@media only screen and (max-width: 750px)': {
+      bottom: 113
     }
   },
   makeAccountButtonText2: {

@@ -16,31 +16,33 @@ const Scheduling = () => {
       <Header />
       <div className={css(styles.spacer)}></div>
       <h1 className={css(styles.pageTitle)}>Let's do business</h1>
-      <div className={css(styles.schedulingPageContent)}>
-        <Calendar 
-          onChange={setDate}
-          value={date}
-        />
-        <div className={css(styles.schedulingForm)}>
-          <h2 className={css(styles.title)}>This is the scheduling page, baby</h2>
-          <p className={css(styles.inputLabel)}>Email address</p>
-          <input 
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className={css(styles.textField)}
+      <div className={css(styles.schedulingWindow)}>
+        <h2 className={css(styles.title)}>Pick a date and leave some contact information, and I'll get back to you</h2>
+        <div className={css(styles.schedulingPageContent)}>
+          <Calendar 
+            onChange={setDate}
+            value={date}
           />
-          <p className={css(styles.inputLabel)}>Phone number</p>
-          <input
-            type="text"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            className={css(styles.textField)}
-          />
-          <p className={css(styles.inputLabel)}>How do you want to be contacted?</p>
-          <div className={css(styles.contactOptions)}>
-            <button className={css(styles.contactOption)}>Email</button>
-            <button className={css(styles.contactOption)}>Phone</button>
+          <div className={css(styles.schedulingForm)}>
+            <p className={css(styles.inputLabel)}>Email address</p>
+            <input 
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className={css(styles.textField)}
+            />
+            <p className={css(styles.inputLabel)}>Phone number</p>
+            <input
+              type="text"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              className={css(styles.textField)}
+            />
+            <p className={css(styles.inputLabel)}>How do you want to be contacted?</p>
+            <div className={css(styles.contactOptions)}>
+              <button className={css(styles.contactOption)}>Email</button>
+              <button className={css(styles.contactOption)}>Phone</button>
+            </div>
           </div>
         </div>
       </div>
@@ -57,35 +59,66 @@ const styles = StyleSheet.create({
   schedulingPage: {
     background: 'linear-gradient( rgba(0, 0, 0, .2), rgba(0, 0, 0, .4) ), url(' + clouds + ')',
     width: '100vw',
-    height: '100vh',
-    backgroundSize: '100vw auto',
     backgroundPosition: 'top left',
-    color: 'white'
+    color: 'white',
+    // mobile
+    '@media only screen and (max-width: 750px)': {
+      backgroundSize: '200vh auto'
+    },
+    // desktop
+    '@media only screen and (min-width: 750px)': {
+      backgroundSize: 'auto 100vh',
+      minHeight: '100vh'
+    }
   },
   pageTitle: {
     fontSize: 40,
     fontWeight: 300,
     display: 'block',
     textAlign: 'center',
-    margin: '50px 0px',
+    // mobile
+    '@media only screen and (max-width: 750px)': {
+    },
+    // desktop
+    '@media only screen and (min-width: 750px)': {
+      margin: '50px 0px',
+    }
   },
-  schedulingPageContent: {
+  schedulingWindow: {
+    background: 'rgba(0, 0, 0, .5)',
     width: '90%',
     maxWidth: 800,
     margin: '0 auto',
     marginTop: 30,
-    padding: 20,
-    backgroundColor: '#ecf0f1',
+    padding: 10,
     borderRadius: 5,
+  },
+  schedulingPageContent: {
+
     display: 'flex',
     justifyContent: 'space-between',
-    background: 'rgba(0, 0, 0, .5)'
+    // mobile
+    '@media only screen and (max-width: 750px)': {
+      flexDirection: 'column'
+    },
+    // desktop
+    '@media only screen and (min-width: 750px)': {
+
+    }
   },
   schedulingForm: {
-    marginLeft: 30
+    // mobile
+    '@media only screen and (max-width: 750px)': {
+      marginLeft: 0
+    },
+    // desktop
+    '@media only screen and (min-width: 750px)': {
+      marginLeft: 30
+    }
   },
   title: {
-    marginTop: 0
+    marginTop: 0,
+    fontWeight: 300
   },
   inputLabel: {
     marginBottom: 5
