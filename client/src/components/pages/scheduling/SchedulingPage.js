@@ -3,13 +3,31 @@ import { StyleSheet, css } from 'aphrodite';
 import Calendar from 'react-calendar'
 
 import Header from '../misc/Header';
+import firebase from '../../../firebase/firebase';
 import clouds from '../../../pics/natural/clouds.jpg';
 
 const Scheduling = () => {
 
   const [date, setDate] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [activeButton, setActiveButton] = useState('');
+
+  const submitForm = () => {
+    const entry = {
+      date: date.toString(),
+      name,
+      email,
+      phoneNumber,
+      preferred: activeButton
+    }
+    console.log(entry);
+
+    firebase.database().ref('bookings').push(entry).then(() => {
+      console.log('submitted that thing');
+    })
+  }
 
   return (
     <div className={css(styles.schedulingPage)}>
@@ -24,6 +42,13 @@ const Scheduling = () => {
             value={date}
           />
           <div className={css(styles.schedulingForm)}>
+            <p className={css(styles.inputLabel)}>Name</p>
+            <input 
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className={css(styles.textField)}
+            />
             <p className={css(styles.inputLabel)}>Email address</p>
             <input 
               type="text"
@@ -40,9 +65,23 @@ const Scheduling = () => {
             />
             <p className={css(styles.inputLabel)}>How do you want to be contacted?</p>
             <div className={css(styles.contactOptions)}>
-              <button className={css(styles.contactOption)}>Email</button>
-              <button className={css(styles.contactOption)}>Phone</button>
+              <button 
+                onClick={() => setActiveButton('email')}
+                className={css(
+                  styles.contactOption,
+                  activeButton === 'email' && styles.activeButton
+                  )} >
+                Email
+              </button>
+              <button 
+                onClick={() => setActiveButton('phone')}
+                className={css(
+                  styles.contactOption,
+                  activeButton === 'phone' && styles.activeButton)}>
+                Phone
+              </button>
             </div>
+            <button onClick={submitForm} className={css(styles.submitButton)}>Submit</button>
           </div>
         </div>
       </div>
@@ -67,7 +106,7 @@ const styles = StyleSheet.create({
     },
     // desktop
     '@media only screen and (min-width: 750px)': {
-      backgroundSize: 'auto 100vh',
+      backgroundSize: '100vw auto',
       minHeight: '100vh'
     }
   },
@@ -90,13 +129,21 @@ const styles = StyleSheet.create({
     maxWidth: 800,
     margin: '0 auto',
     marginTop: 30,
-    padding: 10,
     borderRadius: 5,
+    // mobile
+    '@media only screen and (max-width: 750px)': {
+      flexDirection: 'column',
+      padding: 10,
+    },
+    // desktop
+    '@media only screen and (min-width: 750px)': {
+      padding: 20
+    }
   },
   schedulingPageContent: {
-
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
+    alignItems: 'flex-start',
     // mobile
     '@media only screen and (max-width: 750px)': {
       flexDirection: 'column'
@@ -107,6 +154,7 @@ const styles = StyleSheet.create({
     }
   },
   schedulingForm: {
+    flexGrow: 1,
     // mobile
     '@media only screen and (max-width: 750px)': {
       marginLeft: 0
@@ -133,7 +181,8 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   contactOptions: {
-    display: 'flex'
+    display: 'flex',
+    justifyContent: 'space-around',
   },
   contactOption: {
     flex: '1 1 0',
@@ -142,10 +191,30 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     fontSize: 20,
     padding: 10,
-    marginRight: 10,
     ':hover': {
-      backgroundColor: '#bdc3c7',
+      backgroundColor: '#c0392b',
+      color: 'white',
       cursor: 'pointer'
+    },
+    ':focus': {
+      outline: 'none'
+    }
+  },
+  activeButton: {
+    backgroundColor: '#c0392b',
+    color: 'white'
+  },
+  submitButton: {
+    fontSize: 25,
+    padding: 10,
+    marginTop: 10,
+    backgroundColor: 'white',
+    border: 'none',
+    borderRadius: 5,
+    width: '100%',
+    ':hover': {
+        backgroundColor: '#c0392b',
+        color: 'white'
     }
   }
 })

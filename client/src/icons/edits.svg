@@ -1,0 +1,19 @@
+<svg width="537" height="255" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="257" width="539" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect stroke="#000000" id="svg_2" height="102.000007" width="159.999999" y="5" x="4.499996" stroke-width="2" fill="#41045e"/>
+  <rect stroke="#000000" id="svg_13" height="102.000007" width="159.999999" y="147.453123" x="187.499996" stroke-width="2" fill="#630989"/>
+  <rect stroke="#000000" id="svg_14" height="102.000007" width="159.999999" y="5.453123" x="371.499996" stroke-width="2" fill="#9b59b6"/>
+  <path transform="rotate(90 96.03750610351561,182.32086181640628) " id="svg_15" d="m56.03751,201.820853l54.799995,0l0,-38.999999l-8.399996,0l16.799996,-19.499995l16.800004,19.499995l-8.400002,0l0,58.500002l-71.599993,0l-0.000003,-19.500003z" stroke-opacity="null" stroke-width="2" stroke="#000000" fill="#000000"/>
+  <path id="svg_16" d="m403.03751,204.820853l54.799994,0l0,-38.999999l-8.399996,0l16.799996,-19.499995l16.800003,19.499995l-8.400002,0l0,58.500002l-71.599992,0l-0.000003,-19.500003z" stroke-opacity="null" stroke-width="2" stroke="#000000" fill="#000000"/>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="75" id="svg_17" y="81.453125" x="62.5" stroke-opacity="null" stroke-width="0" stroke="#000000" fill="#ffffff">1</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="75" id="svg_18" y="222.453125" x="246.5" stroke-opacity="null" stroke-width="0" stroke="#000000" fill="#ffffff">2</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="75" id="svg_19" y="83.453125" x="429.5" stroke-opacity="null" stroke-width="0" stroke="#000000" fill="#ffffff">3</text>
+ </g>
+</svg>

@@ -81,9 +81,9 @@ class Header extends React.Component {
           </li>
           <li className={css(styles.menuItem)}>
             <NavLink 
-              to="/pricing" 
+              to="/contact" 
               className={css(styles.menuItemLink)} 
-              activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Pricing</NavLink>
+              activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Contact</NavLink>
           </li>
         </ul>
         <div className={css(styles.headersBurgerIcon)}>

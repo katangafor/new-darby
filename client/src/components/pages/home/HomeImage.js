@@ -4,17 +4,16 @@ import { withRouter } from 'react-router-dom';
 
 import Background from '../../../pics/home/benOnCliff.jpg';
 import { headerHeight } from '../../../styleSettings';
-import { inflate, deflate } from '../../../styles/animations';
 
 const HomeImage = ({ history }) => {
 
   return (
     <div className={css(styles.homeImage)}>
       <div className={css(styles.homeImagesSpacer)}></div>
-      <h4 className={css(styles.homeImagesText1)}>Let’s face it, you need better pictures </h4>
+      <h4 className={css(styles.homeImagesText1)}>Let’s face it: everyone needs better pictures </h4>
       <h4 className={css(styles.homeImagesText2)}>For that date on Tinder</h4>
       <h4 className={css(styles.homeImagesText2)}>That job LinkedIn</h4>
-      <h4 className={css(styles.homeImagesText2)}>Or Your brand's new website</h4>
+      <h4 className={css(styles.homeImagesText2)}>Or your brand's new website</h4>
       <h4 className={css(styles.homeImagesText3)}>Authentic photos for authentic people</h4>
       <div className={css(styles.makeAccountButtonContainerContainer)}>
         <div className={css(styles.makeAccountButtonContainer)}>

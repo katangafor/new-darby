@@ -4,11 +4,7 @@ import { StyleSheet, css } from 'aphrodite';
 import Header from '../misc/Header';
 import HomeImage from './HomeImage';
 import Testimonial from './Testimonial';
-import Info from '../misc/Info';
 import CategoryImage from '../../pages/home/CategoryImage';
-import Footer from '../misc/Footer';
-import firebase from '../../../firebase/firebase';
-import { userInfo } from 'os';
 
 // TODO make the category images into links
 
@@ -18,7 +14,7 @@ const HomePage = () => {
     <>
     <Header />
     <HomeImage />
-    <div className={css(styles.testimonialContainer)}>
+    {/* <div className={css(styles.testimonialContainer)}>
       <Testimonial
         title="Wow, so awesome"
         blurb="Dang I gotta say, Darby took a picture of my face two weeks ago, and I've sold over 950 houses
@@ -49,7 +45,7 @@ const HomePage = () => {
         height="415px"
         author="Fenis"
       />
-    </div>
+    </div> */}
     
     <div className={css(styles.info)}>
       <h3 className={css(styles.infoTitle)}>Hi. I’m Darby, an LA based photographer. </h3>
@@ -63,8 +59,49 @@ const HomePage = () => {
         in portraiture, adventure photography, and lifestyle/branding work. But I love it all.
       </h3>
       <h3 className={css(styles.infoContent)}>
-      Contact me with any inquiries, or follow along on instagram, @elisadarbster.
+      Contact me with any inquiries, or follow along on instagram, <a href="https://www.instagram.com/elisadarbster/?hl=en" style={{textDecoration: 'none'}}>@elisadarbster</a>.
       </h3>
+    </div>
+    {/* <h1 className={css(styles.tagLine)}>Authentic photos for authentic people</h1> */}
+    <div className={css(styles.featuresStrip)}>
+      <div className={css(styles.feature)}>
+        <h1>Hi-res Downloads</h1>
+        <img 
+          src={require('../../../icons/mountains.svg')} 
+          alt="a pretty mountain" 
+          className={css(styles.featureImage)} 
+          style={{height: 150}}
+        />
+        <p className={css(styles.featureText)}>
+          All clients get the same access to both high-resolution and compressed copies of 
+          all photos: no more paying a premium for the best version of yourself.
+        </p>
+      </div>
+      <div className={css(styles.feature)}>
+        <h1>Affordable Pricing</h1>
+        <img 
+          src={require('../../../icons/money.svg')} 
+          alt="a pretty mountain" 
+          className={css(styles.featureImage)}
+          style={{height: 100, marginTop: 25, marginBottom: 25}}
+        />
+        <p className={css(styles.featureText)}>
+          Make your big break without breaking the bank. Professional photography for the people!
+        </p>
+      </div>
+      <div className={css(styles.feature)}>
+        <h1>Expert Editing</h1>
+        <img 
+          src={require('../../../icons/edits.svg')} 
+          alt="a pretty mountain" 
+          className={css(styles.featureImage)} 
+          style={{height: 110, marginTop: 20, marginBottom: 20}}
+        />
+        <p className={css(styles.featureText)}>
+          All photos are edited using the latest and greatest tools and techniques. Additonal retouches
+          available at no extra cost.
+        </p>
+      </div>
     </div>
     <CategoryImage 
       image={require('../../../pics/natural/birds.jpg')} 
@@ -79,6 +116,11 @@ const HomePage = () => {
       link="scheduling"
     />
     {/* <Footer /> */}
+    <img 
+      src={require('../../../icons/money-signs.svg')} 
+      alt="some money signs"
+      className={css(styles.moneySigns)}  
+    />
   </>
   )
 }
@@ -101,7 +143,7 @@ const styles = StyleSheet.create({
   },
   infoContent: {
     fontSize: 20,
-    fontWeight: '200',
+    fontWeight: '300',
     textAlign: 'left'
   },
   testimonialContainer: {
@@ -110,5 +152,56 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-evenly'
     }
+  },
+  moneySigns: {
+    height: 200,
+    width: 300
+  },
+  featuresStrip: {
+    display: 'flex',
+    alignItems: 'stretch',
+    marginTop: 60,
+    marginBottom: 50,
+    '@media only screen and (max-width: 750px)': {
+      flexDirection: 'column'
+    },
+    '@media only screen and (min-width: 750px)': {
+      justifyContent: 'space-around',
+    }
+  },
+  tagLine: {
+    textAlign: 'center',
+    fontWeight: 300,
+    fontSize: 45
+  },
+  feature: {
+    textAlign: 'center',
+    border: `2px solid #16a085`,
+    borderRadius: 10,
+    boxShadow: '5px 5px 5px 0px rgba(0, 0, 0, 0.4)',
+    transition: 'all .2s',
+    position: 'relative',
+    bottom: 0,
+    ':hover': {
+      bottom: 10,
+      boxShadow: '5px 13px 5px 0px rgba(0, 0, 0, 0.4)',
+    },
+    '@media only screen and (max-width: 750px)': {
+      width: '95%',
+      margin: '0 auto',
+      marginBottom: 45
+    },
+    '@media only screen and (min-width: 750px)': {
+      width: '30vw',
+    }
+  },
+  featureImage: {
+    // height: 200
+  },
+  featureText: {
+    maxWidth: '90%',
+    margin: '0 auto',
+    padding: '30px 0px',
+    fontSize: 20
   }
 })

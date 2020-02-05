@@ -1,0 +1,31 @@
+<svg width="580" height="400" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <defs>
+  <linearGradient spreadMethod="pad" y2="0.113281" x2="0.109375" y1="1" x1="1" id="svg_26">
+   <stop offset="0" stop-color="#39a0a0"/>
+   <stop offset="0.929688" stop-color="#c65f5f"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect stroke="#000" id="svg_1" height="371" width="555.000018" y="15.453125" x="15.499982" stroke-width="5" fill="#fff"/>
+  <rect stroke="#0f0f00" id="svg_2" height="281.000003" width="454.000008" y="105.453122" x="15.5" stroke-width="5" fill="#fff"/>
+  <line stroke="#000" stroke-linecap="null" stroke-linejoin="null" id="svg_5" y2="44.453126" x2="533.500001" y1="88.453125" x1="482.5" fill-opacity="null" stroke-opacity="null" stroke-width="5" fill="none"/>
+  <path stroke="#000" transform="rotate(-133 488,84.12500000000001) " id="svg_7" d="m480.925415,94.897007l7.074585,-21.544014l7.074585,21.544014l-14.14917,0z" stroke-width="5" fill="#000000"/>
+  <path stroke="#000" transform="rotate(47 536,42.12499999999999) " id="svg_8" d="m528.92542,52.89701l7.07458,-21.54402l7.07459,21.54402l-14.14917,0z" stroke-width="5" fill="#000000"/>
+  <text stroke="#000" transform="matrix(1.3794279098510742,0,0,1.3794279098510742,-107.94724035263062,-49.11812864243984) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_9" y="144.203743" x="276.52568" fill-opacity="null" stroke-opacity="null" stroke-width="0" fill="#000000">640 x 480</text>
+  <text stroke="#000" transform="matrix(1.3794279098510742,0,0,1.3794279098510742,-107.94724035263062,-49.11812864243984) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_10" y="78.234366" x="304.79827" stroke-opacity="null" stroke-width="0" fill="#000000">1024 x 768</text>
+  <ellipse ry="33" rx="33" id="svg_21" cy="151.453125" cx="64.5" stroke-width="5" stroke="#e74c3c" fill="#e74c3c"/>
+  <path stroke="#000000" id="svg_27" d="m47.202488,385.947707l161.500007,-201.999924l161.500007,201.999924l-323.000015,0z" stroke-width="2" fill="url(#svg_26)"/>
+  <path stroke="#000000" id="svg_28" d="m156.2025,383.947713l143.999994,-157.999934l144.000007,157.999934l-288.000001,0z" stroke-width="2" fill="url(#svg_26)"/>
+  <path stroke="#000000" id="svg_23" d="m18.2025,383.94772l100.5,-116.99994l100.5,116.99994l-201,0z" stroke-width="2" fill="url(#svg_26)"/>
+  <path stroke="#000000" id="svg_29" d="m314.202489,383.94772l75.500007,-108.999945l75.500007,108.999945l-151.000014,0z" stroke-width="2" fill="url(#svg_26)"/>
+ </g>
+</svg>
