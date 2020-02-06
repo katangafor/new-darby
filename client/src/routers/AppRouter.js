@@ -6,6 +6,7 @@ import ContactPage from '../components/pages/contact/contactPage';
 import PortfolioPage from '../components/pages/portfolio/PortfolioPage';
 import SchedulingPage from '../components/pages/scheduling/SchedulingPage';
 import NotFoundPage from '../components/pages/NotFoundPage';
+import HiddenSignInPage from '../components/pages/HiddenSignInPage';
 import HiddenSchedulePage from '../components/pages/hiddenSchedule/hiddenSchedulePage';
 import AddPicsPage from '../components/pages/AddPicsPage';
 
@@ -19,7 +20,8 @@ const AppRouter = () => {
           <Route path="/portfolio" component={PortfolioPage} />
           <Route path="/scheduling" component={SchedulingPage} />
           <Route path="/contact" component={ContactPage} />
-          <Route path="/hi-darby" component={HiddenSchedulePage} />
+          <Route path="/hi-darby" component={HiddenSignInPage} />
+          <Route path="/schedule" component={HiddenSchedulePage} />
           <Route path="/add-pics" component={AddPicsPage} />
           <Route component={NotFoundPage} />
         </Switch>

@@ -12,7 +12,7 @@ const HiddenSignInPage = ({ history }) => {
   const signIn = () => {
     firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
       console.log('nailed it');
-      history.push('/add-pics');
+      history.push('/schedule');
     })
   }
 

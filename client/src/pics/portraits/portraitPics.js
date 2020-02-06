@@ -51,7 +51,7 @@ export default [
   },
   {
     src: require('./beard.jpg'),
-    width: 32,
-    height: 49
+    width: 53,
+    height: 66
   },
 ]

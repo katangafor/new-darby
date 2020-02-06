@@ -77,14 +77,14 @@ class Header extends React.Component {
             <NavLink 
               to="/scheduling" 
               className={css(styles.menuItemLink)} 
-              activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Scheduling</NavLink>
+              activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Scheduling / contact</NavLink>
           </li>
-          <li className={css(styles.menuItem)}>
+          {/* <li className={css(styles.menuItem)}>
             <NavLink 
               to="/contact" 
               className={css(styles.menuItemLink)} 
               activeClassName={css(styles.menuItemLink, styles.menuItemActive)}>Contact</NavLink>
-          </li>
+          </li> */}
         </ul>
         <div className={css(styles.headersBurgerIcon)}>
         <HamburgerMenu

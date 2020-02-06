@@ -24,12 +24,12 @@ const PortfolioPage = () => {
         <div className={css(styles.portfolioNav)}>
           <button 
             onClick={() => setCurrentAlbum(naturalPics)}
-            className={css(styles.portfolioNavButton)} >
+            className={css(styles.portfolioNavButton, currentAlbum === naturalPics && styles.portfolioNavButtonActive)} >
             natural
           </button>
           <button 
             onClick={() => setCurrentAlbum(portraitPics)}
-            className={css(styles.portfolioNavButton)} >
+            className={css(styles.portfolioNavButton, currentAlbum === portraitPics && styles.portfolioNavButtonActive)} >
             portraits
           </button>
         </div>
@@ -74,8 +74,11 @@ const styles = StyleSheet.create({
       cursor: 'pointer'
     },
     ':focus': {
-      color: 'gray',
       outline: 'none'
     }
+  },
+  portfolioNavButtonActive: {
+    color: '#16a085',
+    textDecoration: 'underline'
   }
 })

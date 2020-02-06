@@ -62,7 +62,6 @@ const HomePage = () => {
       Contact me with any inquiries, or follow along on instagram, <a href="https://www.instagram.com/elisadarbster/?hl=en" style={{textDecoration: 'none'}}>@elisadarbster</a>.
       </h3>
     </div>
-    {/* <h1 className={css(styles.tagLine)}>Authentic photos for authentic people</h1> */}
     <div className={css(styles.featuresStrip)}>
       <div className={css(styles.feature)}>
         <h1>Hi-res Downloads</h1>
@@ -116,11 +115,6 @@ const HomePage = () => {
       link="scheduling"
     />
     {/* <Footer /> */}
-    <img 
-      src={require('../../../icons/money-signs.svg')} 
-      alt="some money signs"
-      className={css(styles.moneySigns)}  
-    />
   </>
   )
 }

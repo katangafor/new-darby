@@ -9,6 +9,7 @@ import clouds from '../../../pics/natural/clouds.jpg';
 const Scheduling = () => {
 
   const [date, setDate] = useState('');
+  const [message, setMessage] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -33,53 +34,75 @@ const Scheduling = () => {
     <div className={css(styles.schedulingPage)}>
       <Header />
       <div className={css(styles.spacer)}></div>
-      <h1 className={css(styles.pageTitle)}>Let's do business</h1>
+      <h1 className={css(styles.pageTitle)}>Let's talk</h1>
       <div className={css(styles.schedulingWindow)}>
         <h2 className={css(styles.title)}>Pick a date and leave some contact information, and I'll get back to you</h2>
         <div className={css(styles.schedulingPageContent)}>
-          <Calendar 
-            onChange={setDate}
-            value={date}
-          />
+          <div>
+            <div style={{color: 'black'}}>
+              <Calendar 
+                onChange={setDate}
+                value={date}
+                calendarType="US"
+              />
+            </div>
+            <div>
+              <h4 style={{marginBottom: 0}}>Have any questions? Just want to talk lenses?</h4>
+              <h4 style={{marginTop: 5}}>Let me know!</h4>
+              <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className={css(styles.messageInput)}
+              />
+            </div>
+          </div>
           <div className={css(styles.schedulingForm)}>
-            <p className={css(styles.inputLabel)}>Name</p>
-            <input 
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className={css(styles.textField)}
-            />
-            <p className={css(styles.inputLabel)}>Email address</p>
-            <input 
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={css(styles.textField)}
-            />
-            <p className={css(styles.inputLabel)}>Phone number</p>
-            <input
-              type="text"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              className={css(styles.textField)}
-            />
-            <p className={css(styles.inputLabel)}>How do you want to be contacted?</p>
-            <div className={css(styles.contactOptions)}>
-              <button 
-                onClick={() => setActiveButton('email')}
-                className={css(
-                  styles.contactOption,
-                  activeButton === 'email' && styles.activeButton
-                  )} >
-                Email
-              </button>
-              <button 
-                onClick={() => setActiveButton('phone')}
-                className={css(
-                  styles.contactOption,
-                  activeButton === 'phone' && styles.activeButton)}>
-                Phone
-              </button>
+            <div>
+              <p className={css(styles.inputLabel)}>Name</p>
+              <input 
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className={css(styles.textField)}
+              />
+            </div>
+            <div>
+              <p className={css(styles.inputLabel)}>Email address</p>
+              <input 
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={css(styles.textField)}
+              />
+            </div>
+            <div>
+              <p className={css(styles.inputLabel)}>Phone number</p>
+              <input
+                type="text"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                className={css(styles.textField)}
+              />
+            </div>
+            <div>
+            <p className={css(styles.inputLabel)}>How would you like to be contacted?</p>
+              <div className={css(styles.contactOptions)}>
+                <button 
+                  onClick={() => setActiveButton('email')}
+                  className={css(
+                    styles.contactOption,
+                    activeButton === 'email' && styles.activeButton
+                    )} >
+                  Email
+                </button>
+                <button 
+                  onClick={() => setActiveButton('phone')}
+                  className={css(
+                    styles.contactOption,
+                    activeButton === 'phone' && styles.activeButton)}>
+                  Phone
+                </button>
+              </div>
             </div>
             <button onClick={submitForm} className={css(styles.submitButton)}>Submit</button>
           </div>
@@ -100,14 +123,14 @@ const styles = StyleSheet.create({
     width: '100vw',
     backgroundPosition: 'top left',
     color: 'white',
+    paddingBottom: 30,
     // mobile
     '@media only screen and (max-width: 750px)': {
       backgroundSize: '200vh auto'
     },
     // desktop
     '@media only screen and (min-width: 750px)': {
-      backgroundSize: '100vw auto',
-      minHeight: '100vh'
+      backgroundSize: '200vh auto'
     }
   },
   pageTitle: {
@@ -124,6 +147,7 @@ const styles = StyleSheet.create({
     }
   },
   schedulingWindow: {
+    border: '1px solid blue',
     background: 'rgba(0, 0, 0, .5)',
     width: '90%',
     maxWidth: 800,
@@ -140,10 +164,20 @@ const styles = StyleSheet.create({
       padding: 20
     }
   },
+  messageInput: {
+    padding: 5,
+    fontSize: 15,
+    width: '100%',
+    height: 150,
+    borderRadius: 5,
+    ':focus': {
+      outline: 'none'
+    }
+  },
   schedulingPageContent: {
     display: 'flex',
     justifyContent: 'space-around',
-    alignItems: 'flex-start',
+    alignItems: 'stretch',
     // mobile
     '@media only screen and (max-width: 750px)': {
       flexDirection: 'column'
@@ -155,6 +189,9 @@ const styles = StyleSheet.create({
   },
   schedulingForm: {
     flexGrow: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     // mobile
     '@media only screen and (max-width: 750px)': {
       marginLeft: 0
@@ -169,14 +206,14 @@ const styles = StyleSheet.create({
     fontWeight: 300
   },
   inputLabel: {
-    marginBottom: 5
+    marginBottom: 5,
+    marginTop: 0
   },
   textField: {
     padding: 10,
     fontSize: 20,
     borderRadius: 5,
     marginBottom: 15,
-    boxSizing: 'border-box',
     border: '1px solid black',
     width: '100%'
   },
@@ -207,10 +244,12 @@ const styles = StyleSheet.create({
   submitButton: {
     fontSize: 25,
     padding: 10,
-    marginTop: 10,
     backgroundColor: 'white',
+    boxSizing: 'border-box',
     border: 'none',
     borderRadius: 5,
+    position: 'relative',
+    bottom: 3,
     width: '100%',
     ':hover': {
         backgroundColor: '#c0392b',
