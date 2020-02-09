@@ -147,7 +147,6 @@ const styles = StyleSheet.create({
     }
   },
   schedulingWindow: {
-    border: '1px solid blue',
     background: 'rgba(0, 0, 0, .5)',
     width: '90%',
     maxWidth: 800,
@@ -253,7 +252,8 @@ const styles = StyleSheet.create({
     width: '100%',
     ':hover': {
         backgroundColor: '#c0392b',
-        color: 'white'
+        color: 'white',
+        cursor: 'pointer'
     }
   }
 })
