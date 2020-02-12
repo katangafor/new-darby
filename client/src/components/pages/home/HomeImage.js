@@ -11,10 +11,11 @@ const HomeImage = ({ history }) => {
     <div className={css(styles.homeImage)}>
       <div className={css(styles.homeImagesSpacer)}></div>
       <h4 className={css(styles.homeImagesText1)}>Let’s face it: everyone needs better pictures </h4>
-      <h4 className={css(styles.homeImagesText2)}>For that date on Tinder</h4>
-      <h4 className={css(styles.homeImagesText2)}>That job LinkedIn</h4>
-      <h4 className={css(styles.homeImagesText2)}>Or your brand's new website</h4>
-      <h4 className={css(styles.homeImagesText3)}>Authentic photos for authentic people</h4>
+      <div>
+        <h4 className={css(styles.homeImagesText2)}>For that date on Tinder</h4>
+        <h4 className={css(styles.homeImagesText2)}>That job LinkedIn</h4>
+        <h4 className={css(styles.homeImagesText2)}>Or your brand's new website</h4>
+      </div>
       <div className={css(styles.makeAccountButtonContainerContainer)}>
         <div className={css(styles.makeAccountButtonContainer)}>
           <div onClick={() => {history.push('/portfolio')}} className={css(styles.makeAccountButtonContent)} tabIndex={0}>
@@ -33,6 +34,10 @@ const styles = StyleSheet.create({
     color: 'white',
     background: 'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(' + Background + ')',
     position: 'relative',
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
     // mobile
     '@media only screen and (max-width: 750px)': {
       width: '100vw',

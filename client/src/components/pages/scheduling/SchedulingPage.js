@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
     },
     // desktop
     '@media only screen and (min-width: 750px)': {
-      marginLeft: 30
+      marginLeft: 30,
     }
   },
   title: {

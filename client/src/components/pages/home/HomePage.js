@@ -48,15 +48,19 @@ const HomePage = () => {
     </div> */}
     
     <div className={css(styles.info)}>
-      <h3 className={css(styles.infoTitle)}>Hi. I’m Darby, an LA based photographer. </h3>
+      <h3 className={css(styles.infoTitle)}>Im Darby and I don’t like boring photos.</h3>
       <h3 className={css(styles.infoContent)}>
-        As an East Coast transplant, I don’t take California’s vibrant landscapes and culture for granted. 
-        Photography is my way of connecting with and appreciating the people and places around me. 
+        I believe that great photos don’t try to fit in. 
+        Great photos tell a story - your story - and make you stand out. 
       </h3>
       <h3 className={css(styles.infoContent)}>
-        My body of work consists of both commercial and personal projects, though not specializing in any 
-        one niche. Rather, my affinity for travel, people, and unique experiences has led me to work mainly 
-        in portraiture, adventure photography, and lifestyle/branding work. But I love it all.
+        I'm an east coast transplant now based in LA, and I don’t take California’s 
+        vibrant landscapes and culture for granted. Photography is my way of connecting 
+        with the amazing people and places around me.
+      </h3>
+      <h3 className={css(styles.infoContent)}>
+        Life isn’t a Hallmark card: it’s much more dynamic and exciting. And your photos 
+        - whether they’re for an online profile, an event, or a brand - should be too.
       </h3>
       <h3 className={css(styles.infoContent)}>
       Contact me with any inquiries, or follow along on instagram, <a href="https://www.instagram.com/elisadarbster/?hl=en" style={{textDecoration: 'none'}}>@elisadarbster</a>.
