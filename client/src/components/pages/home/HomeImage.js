@@ -18,7 +18,7 @@ const HomeImage = ({ history }) => {
       </div>
       <div className={css(styles.makeAccountButtonContainerContainer)}>
         <div className={css(styles.makeAccountButtonContainer)}>
-          <div onClick={() => {history.push('/portfolio')}} className={css(styles.makeAccountButtonContent)} tabIndex={0}>
+          <div onClick={() => {history.push('/scheduling')}} className={css(styles.makeAccountButtonContent)} tabIndex={0}>
             <p>Book now</p>
             <p className={css(styles.makeAccountButtonText2)}>Book now</p>
           </div>

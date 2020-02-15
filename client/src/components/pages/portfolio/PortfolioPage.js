@@ -17,9 +17,9 @@ const PortfolioPage = () => {
     <div>
       <Header />
       <div className={css(styles.spacer)}></div>
-      <Info
+      {/* <Info
         first="Look on my works, ye Mighty, and despair"
-      />
+      /> */}
       <div className={css(styles.portfolioContainer)}>
         <div className={css(styles.portfolioNav)}>
           <button 

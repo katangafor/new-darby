@@ -48,7 +48,7 @@ const HomePage = () => {
     </div> */}
     
     <div className={css(styles.info)}>
-      <h3 className={css(styles.infoTitle)}>Im Darby and I don’t like boring photos.</h3>
+      <h3 className={css(styles.infoTitle)}>I'm Darby and I don’t like boring photos.</h3>
       <h3 className={css(styles.infoContent)}>
         I believe that great photos don’t try to fit in. 
         Great photos tell a story - your story - and make you stand out. 
