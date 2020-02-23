@@ -14,38 +14,6 @@ const HomePage = () => {
     <>
     <Header />
     <HomeImage />
-    {/* <div className={css(styles.testimonialContainer)}>
-      <Testimonial
-        title="Wow, so awesome"
-        blurb="Dang I gotta say, Darby took a picture of my face two weeks ago, and I've sold over 950 houses
-        since then. I've also been offered 100 jobs, and I took all of them, and now I have enough money
-        to buy a helicopter every day! My entire life changed for the better as soon as Darby took a
-        picture of my face, so if you don't get a picture taken of your face, you will regret it until
-        the day you die."
-        height="415px"
-        author="Shillingsworth Buxaplenty"
-      />
-      <Testimonial
-        title="&#9733;&#9733;&#9733;&#9733;&#9733;"
-        blurb="Dang I gotta say, Darby took a picture of my face two weeks ago, and I've sold over 950 houses
-        since then. I've also been offered 100 jobs, and I took all of them, and now I have enough money
-        to buy a helicopter every day! My entire life changed for the better as soon as Darby took a
-        picture of my face, so if you don't get a picture taken of your face, you will regret it until
-        the day you die."
-        height="415px"
-        author="Lord the Sir Duke Highley-o"
-      />
-      <Testimonial
-        title="Darby made me rich"
-        blurb="Dang I gotta say, Darby took a picture of my face two weeks ago, and I've sold over 950 houses
-        since then. I've also been offered 100 jobs, and I took all of them, and now I have enough money
-        to buy a helicopter every day! My entire life changed for the better as soon as Darby took a
-        picture of my face, so if you don't get a picture taken of your face, you will regret it until
-        the day you die."
-        height="415px"
-        author="Fenis"
-      />
-    </div> */}
     
     <div className={css(styles.info)}>
       <h3 className={css(styles.infoTitle)}>I'm Darby and I don’t like boring photos.</h3>

@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import HomePage from '../components/pages/home/HomePage';
-import ContactPage from '../components/pages/contact/contactPage';
 import PortfolioPage from '../components/pages/portfolio/PortfolioPage';
 import SchedulingPage from '../components/pages/scheduling/SchedulingPage';
 import NotFoundPage from '../components/pages/NotFoundPage';
@@ -19,7 +18,6 @@ const AppRouter = () => {
           <Route path="/" component={HomePage} exact={true} />
           <Route path="/portfolio" component={PortfolioPage} />
           <Route path="/scheduling" component={SchedulingPage} />
-          <Route path="/contact" component={ContactPage} />
           <Route path="/hi-darby" component={HiddenSignInPage} />
           <Route path="/schedule" component={HiddenSchedulePage} />
           <Route path="/add-pics" component={AddPicsPage} />
